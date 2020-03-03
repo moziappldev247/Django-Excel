@@ -21,7 +21,7 @@ def upload(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             filehandle = request.FILES['file']
-            return excel.make_response(filehandle.get_sheet(), "csv",
+            return excel.make_response(filehandle.get_sheet(), "xlsx",
                                        file_name="download")
     else:
         form = UploadFileForm()
